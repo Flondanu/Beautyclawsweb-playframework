@@ -1,0 +1,52 @@
+@(userId: String)(implicit request: play.mvc.Http.Request, messages: play.i18n.Messages)
+
+
+@main("Beauty Claw") {
+<div class="container">
+    <h2>Dashboard</h2>
+    <div class="dashboard-content">
+        <h3>Welcome to Beauty Claws</h3>
+    </div>
+    <div class="dashboard-section">
+        <h3>Sales Today</h3>
+        <ul>
+            <li>Sale ID: 1, Amount: 900, Date: 2024-07-07</li>
+            <li>Sale ID: 2, Amount: 900, Date: 2024-07-07</li>
+        </ul>
+    </div>
+    <div class="dashboard-section">
+        <h3>Products Made Today</h3>
+        <ul>
+            <li>Product ID: 1, Name: Blue Pressons, Quantity: 50, Date: 2024-07-07</li>
+            <li>Product ID: 2, Name: Green Pressons, Quantity: 30, Date: 2024-07-07</li>
+        </ul>
+    </div>
+    <div class="dashboard-section">
+        <h3>Orders Yet to be Dispatched</h3>
+        <ul>
+            <li>Order ID: 1, Product ID: 1, Quantity: 10, Date: 2024-07-07</li>
+            <li>Order ID: 2, Product ID: 2, Quantity: 5, Date: 2024-07-07</li>
+        </ul>
+    </div>
+    <div class="dashboard-section">
+        <h3>Users Logged In Today</h3>
+        <ul>
+            <li>User ID: 1, Username: user1, Last Login: 2024-07-07</li>
+            <li>User ID: 2, Username: user2, Last Login: 2024-07-07</li>
+        </ul>
+    </div>
+    <a href="/logout" class="logout-link">Logout</a>
+</div>
+
+<div class="nav-bar">
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/sales">Sales</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</div>
+    </div>
+    <a href="@routes.HomeController.logout()">Logout</a>
+</div>
+}

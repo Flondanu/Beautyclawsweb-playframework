@@ -1,0 +1,35 @@
+@import play.mvc.Http.Request
+@import helper._
+
+@(loginForm: Form[forms.LoginForm])(implicit request: play.mvc.Http.Request, messages: play.i18n.Messages)
+
+@main("Beauty Claw") {
+
+<div class="container">
+    <h2>Login</h2>
+    <form action="@routes.HomeController.login()" method="post">
+        @CSRF.formField
+
+            <label>Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+
+
+
+            <label>Password:</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+
+
+        <div class="align-self-end ml-auto">
+            <button type="button" class="btn btn-link"><a href="@routes.ForgotPasswordController.forgotpassword()"
+                                                          class="btn btn-link">Forgot Password?</a></button>
+        </div>
+
+
+        <button type="submit">Login</button>
+        <div class="align-self-centre ml-auto">
+            <p>Don't have an account?<a href="@routes.RegisterController.register()" class="btn btn-link">Sign up!</a>
+            </p>
+        </div>
+    </form>
+</div>
+}:
